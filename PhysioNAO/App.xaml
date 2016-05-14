@@ -1,0 +1,25 @@
+<Application x:Class="PhysioNAO.App" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:PhysioNAO"
+             xmlns:vm ="clr-namespace:PhysioNAO.ViewModel"
+             xmlns:views="clr-namespace:PhysioNAO.View"
+             StartupUri="MainWindow.xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+  <Application.Resources>
+    <ResourceDictionary>
+      <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PhysioNAO.ViewModel" />
+            <DataTemplate DataType="{x:Type vm:WelcomeViewModel}">
+                <views:WelcomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:PhysioViewModel}">
+                <views:PhysioView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:PatientViewModel}">
+                <views:PatientView />
+            </DataTemplate>
+        </ResourceDictionary>
+  </Application.Resources>
+</Application>

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="PhysioNAO.View.WelcomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PhysioNAO.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <Grid Background="White">
+        <StackPanel >
+            <RadioButton Content="A Physiotherapist" IsChecked="{Binding ViewMode1,Mode =TwoWay}"/>
+            <RadioButton  Content="A Patient/Carer" IsChecked="{Binding ViewMode2, Mode=TwoWay}"/>
+            <Button Command="{Binding SecondViewCommand}"
+                    Content="Begin" Margin="453,0,920,0"/>
+        </StackPanel>
+        
+
+    </Grid>
+
+</UserControl>

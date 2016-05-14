@@ -1,0 +1,47 @@
+﻿<Window x:Class="PhysioNAO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhysioNAO"
+        mc:Ignorable="d"
+        DataContext="{Binding Main, Source={StaticResource Locator} }"
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" Name="AppWindow">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Background="CornflowerBlue">
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Welcome to PhysioNAO"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="4" Content="Exit"  Command="{Binding ExitCommand}" CommandParameter="{Binding ElementName=AppWindow}" />
+                    <Button Grid.Column="0" Content="Home"  Command="{Binding HomeCommand}" />
+                    <Button Grid.Column="3" Content="Back"  Command="{Binding BackCommand}"  IsEnabled="{Binding Homepage}" />
+                </Grid>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="1">
+                <ContentControl  Content="{Binding CurrentViewModel}"/>
+            </StackPanel>
+
+            <Label Grid.Row="2"  Content="Welcome to PhysioNAO" Background="CornflowerBlue" BorderThickness="0,1,0,0">
+                <Label.Effect>
+                    <DropShadowEffect Opacity="0.995"/>
+                </Label.Effect>
+            </Label>
+        </Grid>
+</Window>
