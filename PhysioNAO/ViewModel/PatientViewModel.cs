@@ -9,5 +9,11 @@ namespace PhysioNAO.ViewModel
 {
     public class PatientViewModel:ViewModelBase
     {
+        private ViewModelBase Parent;
+
+        public PatientViewModel(MainViewModel parent)
+        {
+            Parent = parent;
+        }
     }
 }

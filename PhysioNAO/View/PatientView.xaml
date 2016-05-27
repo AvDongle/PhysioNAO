@@ -6,12 +6,9 @@
              xmlns:local="clr-namespace:PhysioNAO.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             Background="Bisque"
+             Background="AliceBlue"
              MinHeight="648"
-             
              >
-
     <Grid>
     </Grid>
 </UserControl>
-        

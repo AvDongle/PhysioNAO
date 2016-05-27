@@ -11,17 +11,14 @@ using System.Windows;
 
 namespace PhysioNAO.ViewModel
 {
-    class WelcomeViewModel:ViewModelBase
+    public class WelcomeViewModel:ViewModelBase
     {
-        public Patient cliff = new Patient();
         private MainViewModel Parent;
-        //string _name;
         private bool _viewMode1 = true;
         private bool _viewMode2;
+        public string pwd = "";
 
         public ICommand SecondViewCommand { get; private set; }
-
-
 
         public WelcomeViewModel(MainViewModel parent)
         {
@@ -32,9 +29,9 @@ namespace PhysioNAO.ViewModel
         private void ExecuteSecondViewCommand()
         {
             if (_viewMode1)
-                Parent.CurrentViewModel = new PhysioViewModel();
+                Parent.CurrentViewModel = new PatientConfigViewModel(Parent);
             else
-                Parent.CurrentViewModel = new PatientViewModel();
+                Parent.CurrentViewModel = new PatientViewModel(Parent);
         }
 
         public bool ViewMode1

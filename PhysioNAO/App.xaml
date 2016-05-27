@@ -14,12 +14,19 @@
             <DataTemplate DataType="{x:Type vm:WelcomeViewModel}">
                 <views:WelcomeView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vm:PhysioViewModel}">
-                <views:PhysioView />
+            <DataTemplate DataType="{x:Type vm:ExerciseConfigViewModel}">
+                <views:ExerciseConfigView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:PatientConfigViewModel}">
+                <views:PatientConfigView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type vm:PatientViewModel}">
                 <views:PatientView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SetConfigViewModel}">
+                <views:SetConfigView />
+            </DataTemplate>
+        
         </ResourceDictionary>
   </Application.Resources>
 </Application>

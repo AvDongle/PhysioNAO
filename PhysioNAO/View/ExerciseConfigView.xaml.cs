@@ -18,9 +18,9 @@ namespace PhysioNAO.View
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class PhysioView : UserControl
+    public partial class ExerciseConfigView : UserControl
     {
-        public PhysioView()
+        public ExerciseConfigView()
         {
             InitializeComponent();
         }

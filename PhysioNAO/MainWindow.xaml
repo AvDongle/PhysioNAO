@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:PhysioNAO"
         mc:Ignorable="d"
         DataContext="{Binding Main, Source={StaticResource Locator} }"
-        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" Name="AppWindow">
+        Title="MainWindow" Height="768" Width="1024" WindowState="Maximized" Name="AppWindow">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+    </Window.Resources>
+    
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -30,18 +34,19 @@
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="4" Content="Exit"  Command="{Binding ExitCommand}" CommandParameter="{Binding ElementName=AppWindow}" />
                     <Button Grid.Column="0" Content="Home"  Command="{Binding HomeCommand}" />
-                    <Button Grid.Column="3" Content="Back"  Command="{Binding BackCommand}"  IsEnabled="{Binding Homepage}" />
+                    <Button Grid.Column="3" Content="Back"  Command="{Binding BackCommand}"  IsEnabled="{Binding NotHomepage}" />
                 </Grid>
             </Grid>
         </Grid>
         <StackPanel Grid.Row="1">
                 <ContentControl  Content="{Binding CurrentViewModel}"/>
             </StackPanel>
-
-            <Label Grid.Row="2"  Content="Welcome to PhysioNAO" Background="CornflowerBlue" BorderThickness="0,1,0,0">
-                <Label.Effect>
-                    <DropShadowEffect Opacity="0.995"/>
-                </Label.Effect>
-            </Label>
+        <Grid Grid.Row="2" Background="CornflowerBlue">
+            <StackPanel Visibility="{Binding PhysioHomepage, Converter={StaticResource BoolToVisibility}}" Orientation="Horizontal">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Command="{Binding PatientCommand}" Content="View/Edit Patients" Margin="100,22"/>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding ExerciseCommand}" Content="View/Edit Exercises" Margin="100,22"/>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Command="{Binding SetsCommand}" Content="View/Edit Sets" Margin="100,22"/>
+            </StackPanel>
         </Grid>
+    </Grid>
 </Window>

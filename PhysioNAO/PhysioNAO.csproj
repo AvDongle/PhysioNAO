@@ -99,19 +99,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\ObservableObject.cs" />
+    <Compile Include="Model\Exercise.cs" />
+    <Compile Include="Model\ExerciseSet.cs" />
     <Compile Include="Model\Patient.cs" />
-    <Compile Include="Model\RadioButtonToInt.cs" />
+    <Compile Include="ViewModel\SetConfigViewModel.cs" />
+    <Compile Include="ViewModel\PatientConfigViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel.cs" />
-    <Compile Include="ViewModel\PhysioViewModel.cs" />
+    <Compile Include="ViewModel\ExerciseConfigViewModel.cs" />
     <Compile Include="ViewModel\WelcomeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="View\PhysioView.xaml.cs">
-      <DependentUpon>PhysioView.xaml</DependentUpon>
+    <Compile Include="View\SetConfigView.xaml.cs">
+      <DependentUpon>SetConfigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExerciseConfigView.xaml.cs">
+      <DependentUpon>ExerciseConfigView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientConfigView.xaml.cs">
+      <DependentUpon>PatientConfigView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WelcomeView.xaml.cs">
       <DependentUpon>WelcomeView.xaml</DependentUpon>
@@ -128,11 +136,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\PhysioView.xaml">
+    <Page Include="View\SetConfigView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ExerciseConfigView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PatientView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PatientConfigView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

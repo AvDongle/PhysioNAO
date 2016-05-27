@@ -7,22 +7,20 @@ using GalaSoft.MvvmLight;
 
 namespace PhysioNAO.Model
 {
-    public class Patient : GalaSoft.MvvmLight.ObservableObject
+    public class Exercise : GalaSoft.MvvmLight.ObservableObject
     {
         #region Fields
         string _name;
-        ExerciseSet _exerciseset;
 
-        public Patient()
+        #endregion //Fields
+        public Exercise()
         {
         }
 
-        public Patient(string s)
+        public Exercise(string s)
         {
             _name = s;
         }
-        #endregion //Fields
-
         #region Properties
         public string Name
         {
